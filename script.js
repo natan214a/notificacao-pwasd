@@ -38,4 +38,18 @@ function enviarNotificacao() {
         const { titulo, imagem } = plataformas[plataforma];
 
         reg.showNotification(titulo, {
-          bod
+          body: `Valor: ${valorFinal}`,
+          icon: imagem,
+          image: imagem,
+          badge: imagem,
+          vibrate: [200, 100, 200],
+          tag: "notificacao-venda",
+          renotify: true,
+          data: {
+            url: "https://utmify.io"
+          }
+        });
+      });
+    }
+  });
+}
