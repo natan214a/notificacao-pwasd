@@ -1,34 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Notificação Fake UTMify</title>
+  <title>UTMify Notificação Fake</title>
   <link rel="manifest" href="manifest.json" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 2rem;
-      background: #f7f9fc;
+      background-color: #f4f4f4;
+      padding: 2rem;
       text-align: center;
     }
-    button {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background: #0070f3;
+    h1 {
+      color: #222;
+    }
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #0070f3;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      font-size: 1rem;
     }
-    button:hover {
-      background: #005bb5;
+    .btn:hover {
+      background-color: #0059c1;
+    }
+    select {
+      padding: 0.5rem;
+      margin: 1rem;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <h1>Notificação Fake: Venda Aprovada!</h1>
-  <button onclick="enviarNotificacao()">Mostrar Notificação</button>
+  <h1>Simulador de Notificação - UTMify 2025</h1>
+
+  <label for="valor">Escolha o valor:</label>
+  <select id="valor">
+    <option value="R$44,99">R$44,99</option>
+    <option value="R$28,99">R$28,99</option>
+    <option value="R$18,99">R$18,99</option>
+  </select>
+
+  <br/>
+
+  <label for="imagem">Escolha a imagem:</label>
+  <select id="imagem">
+    <option value="yt">Imagem do Canal</option>
+    <option value="ticket">Imagem de Ticket</option>
+  </select>
+
+  <br/><br/>
+  <button class="btn" onclick="enviarNotificacao()">Enviar Notificação</button>
 
   <script src="script.js"></script>
 </body>
