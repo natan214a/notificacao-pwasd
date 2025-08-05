@@ -1,3 +1,4 @@
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js');
 }
@@ -6,11 +7,21 @@ function enviarNotificacao() {
   Notification.requestPermission().then(function(result) {
     if (result === 'granted') {
       navigator.serviceWorker.getRegistration().then(function(reg) {
-        reg.showNotification("Venda Aprovada!", {
-          body: "Você recebeu um novo ticket de tráfego pago! 🚀 Nicho Hot",
-          icon: "https://i.imgur.com/y7Xy9gK.png", // Ícone estilo ticket
-          image: "https://i.imgur.com/6IqF0Py.jpg", // Imagem grande - tema tráfego pago
-          badge: "https://i.imgur.com/65bVhcj.png", // Badge para a notificação
+        const valor = document.getElementById("valor").value;
+        const imagemSelecionada = document.getElementById("imagem").value;
+
+        let imageURL = "";
+        if (imagemSelecionada === "yt") {
+          imageURL = "https://yt3.googleusercontent.com/TSMmH-J8-Zbx6bV4TJ7QVQL6aAstEMonL0A9APfYyuURitzqQqgOznXAAYjq3GKkYMeX_30XfA=s72-c-k-c0x00ffffff-no-rj";
+        } else {
+          imageURL = "https://i.imgur.com/6IqF0Py.jpg";
+        }
+
+        reg.showNotification("🎉 Venda Aprovada!", {
+          body: `Valor: ${valor}`,
+          icon: imageURL,
+          image: imageURL,
+          badge: "https://i.imgur.com/65bVhcj.png",
           vibrate: [200, 100, 200],
           tag: "venda-aprovada-utmify",
           renotify: true,
@@ -22,10 +33,3 @@ function enviarNotificacao() {
     }
   });
 }
-
-// Abrir URL ao clicar na notificação
-navigator.serviceWorker.addEventListener('message', event => {
-  if(event.data && event.data.action === 'open-url'){
-    window.open(event.data.url, '_blank');
-  }
-});
