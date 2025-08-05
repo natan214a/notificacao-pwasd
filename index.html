@@ -1,58 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>UTMify Notificação Fake</title>
+  <title>Notificações Fake Profissionais</title>
   <link rel="manifest" href="manifest.json" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #fafafa;
       padding: 2rem;
       text-align: center;
     }
     h1 {
-      color: #222;
+      color: #333;
     }
     .btn {
       display: inline-block;
-      margin: 0.5rem;
-      padding: 0.8rem 1.5rem;
+      margin: 0.8rem;
+      padding: 1rem 2rem;
       background-color: #0070f3;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 1rem;
     }
     .btn:hover {
-      background-color: #0059c1;
+      background-color: #0055aa;
     }
-    select {
-      padding: 0.5rem;
-      margin: 1rem;
+    select, input {
+      padding: 0.6rem;
+      margin: 0.5rem;
       font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <h1>Simulador de Notificação - UTMify 2025</h1>
+  <h1>Simulador de Notificações UTMify PRO</h1>
+
+  <label for="plataforma">Plataforma:</label>
+  <select id="plataforma">
+    <option value="kiwify">Kiwify</option>
+    <option value="hotmart">Hotmart</option>
+    <option value="kirvano">Kirvano</option>
+    <option value="pushinpay">Pushin Pay</option>
+  </select>
+  <br/>
 
   <label for="valor">Escolha o valor:</label>
   <select id="valor">
-    <option value="R$44,99">R$44,99</option>
-    <option value="R$28,99">R$28,99</option>
-    <option value="R$18,99">R$18,99</option>
+    <option value="R$97,00">R$97,00</option>
+    <option value="R$197,00">R$197,00</option>
+    <option value="R$297,00">R$297,00</option>
+    <option value="custom">Personalizado</option>
   </select>
-
-  <br/>
-
-  <label for="imagem">Escolha a imagem:</label>
-  <select id="imagem">
-    <option value="yt">Imagem do Canal</option>
-    <option value="ticket">Imagem de Ticket</option>
-  </select>
+  <input type="text" id="valorPersonalizado" placeholder="Ex: R$88,88" style="display:none;" />
 
   <br/><br/>
   <button class="btn" onclick="enviarNotificacao()">Enviar Notificação</button>
