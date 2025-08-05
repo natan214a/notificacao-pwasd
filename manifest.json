@@ -1,10 +1,9 @@
-
 {
-  "name": "UTMify Notificação Fake",
-  "short_name": "UTMifyFake",
+  "name": "UTMify Notificações PRO",
+  "short_name": "UTMifyPRO",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0070f3",
+  "background_color": "#ffffff",
   "theme_color": "#0070f3",
   "icons": [
     {
