@@ -17,7 +17,7 @@ function enviarNotificacao() {
           imageURL = "https://i.imgur.com/6IqF0Py.jpg";
         }
 
-        reg.showNotification("🎉 Venda Aprovada!", {
+        reg.showNotification("Venda Aprovada!", {
           body: `Valor: ${valor}`,
           icon: imageURL,
           image: imageURL,
