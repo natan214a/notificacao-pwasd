@@ -7,7 +7,7 @@ function enviarNotificacao() {
     if (result === 'granted') {
       navigator.serviceWorker.getRegistration().then(function(reg) {
         reg.showNotification("Venda Aprovada!", {
-          body: "Valor: R$23,99",
+          body: "Você recebeu um novo ticket de tráfego pago! 🚀 Nicho Hot",
           icon: "https://i.imgur.com/y7Xy9gK.png", // Ícone estilo ticket
           image: "https://i.imgur.com/6IqF0Py.jpg", // Imagem grande - tema tráfego pago
           badge: "https://i.imgur.com/65bVhcj.png", // Badge para a notificação
